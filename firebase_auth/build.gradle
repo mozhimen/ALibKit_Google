@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.abilityk.firebase.auth'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         minSdk 24
@@ -31,9 +31,17 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation project(':SwiftKit:basick')
+    // Import the BoM for the Firebase platform
+    api(platform("com.google.firebase:firebase-bom:32.3.1"))
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    api("com.google.firebase:firebase-auth-ktx")
+
+    // Also add the dependency for the Google Play services library and specify its version
+    api("com.google.android.gms:play-services-auth:20.7.0")
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
