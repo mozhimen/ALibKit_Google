@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
+import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.GetSignInIntentRequest
@@ -32,12 +33,12 @@ import com.mozhimen.basick.lintk.optin.OptInApiInit_ByLazy
  */
 @OptInApiInit_ByLazy
 @OptInApiCall_BindLifecycle
-class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, private val _serverClientId: String) : BaseWakeBefDestroyLifecycleObserver() {
+class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, private val _serverClientId: String, private val isOneTapSignIn: Boolean = true) : BaseWakeBefDestroyLifecycleObserver() {
     private lateinit var _auth: FirebaseAuth
     private lateinit var _signInClient: SignInClient
     private var _onUpdateUI: IA_Listener<FirebaseUser?>? = null
 
-    private val signInLauncher = _componentActivity.registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+    private var _signInLauncher: ActivityResultLauncher<IntentSenderRequest>? = _componentActivity!!.registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
         handleSignInResult(result.data)
     }
 
@@ -46,15 +47,17 @@ class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, priva
     override fun onCreate(owner: LifecycleOwner) {
         // [START config_signin]
         // Configure Google Sign In
-        _signInClient = Identity.getSignInClient(_componentActivity)
+        _signInClient = Identity.getSignInClient(_componentActivity!!)
 
         // Initialize Firebase Auth
         _auth = Firebase.auth
 
         // Display One-Tap Sign In if user isn't logged in
-        val currentUser = _auth.currentUser
-        if (currentUser == null) {
-            oneTapSignIn(_serverClientId)
+        if (isOneTapSignIn) {
+            val currentUser = _auth.currentUser
+            if (currentUser == null) {
+                oneTapSignIn(_serverClientId)
+            }
         }
     }
 
@@ -62,6 +65,13 @@ class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, priva
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = _auth.currentUser
         updateUI(currentUser)
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        _onUpdateUI = null
+        _signInLauncher = null
+        _componentActivity = null
+        super.onDestroy(owner)
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
@@ -89,7 +99,7 @@ class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, priva
         _auth.signOut()
 
         // Google sign out
-        _signInClient.signOut().addOnCompleteListener(_componentActivity) {
+        _signInClient.signOut().addOnCompleteListener(_componentActivity!!) {
             updateUI(null)
         }
     }
@@ -140,11 +150,11 @@ class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, priva
 //        showProgressBar()
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         _auth.signInWithCredential(credential)
-            .addOnCompleteListener(_componentActivity) { task ->
+            .addOnCompleteListener(_componentActivity!!) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
-                    val user : FirebaseUser? = _auth.currentUser
+                    val user: FirebaseUser? = _auth.currentUser
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
@@ -209,7 +219,7 @@ class FirebaseAuthProxy(private val _componentActivity: ComponentActivity, priva
         try {
             val intentSenderRequest = IntentSenderRequest.Builder(pendingIntent)
                 .build()
-            signInLauncher.launch(intentSenderRequest)
+            _signInLauncher?.launch(intentSenderRequest)
         } catch (e: IntentSender.SendIntentException) {
             Log.e(TAG, "Couldn't start Sign In: ${e.localizedMessage}")
         }
