@@ -21,8 +21,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mozhimen.basick.elemk.androidx.lifecycle.bases.BaseWakeBefDestroyLifecycleObserver
 import com.mozhimen.basick.elemk.commons.IA_Listener
-import com.mozhimen.basick.lintk.optin.OptInApiCall_BindLifecycle
-import com.mozhimen.basick.lintk.optin.OptInApiInit_ByLazy
+import com.mozhimen.basick.lintk.optins.OApiCall_BindLifecycle
+import com.mozhimen.basick.lintk.optins.OApiCall_BindViewLifecycle
+import com.mozhimen.basick.lintk.optins.OApiInit_ByLazy
 
 /**
  * @ClassName FirebaseAuthProxy
@@ -31,8 +32,9 @@ import com.mozhimen.basick.lintk.optin.OptInApiInit_ByLazy
  * @Date 2024/1/10
  * @Version 1.0
  */
-@OptInApiInit_ByLazy
-@OptInApiCall_BindLifecycle
+@OApiInit_ByLazy
+@OApiCall_BindViewLifecycle
+@OApiCall_BindLifecycle
 class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, private val _serverClientId: String, private val isOneTapSignIn: Boolean = true) : BaseWakeBefDestroyLifecycleObserver() {
     private lateinit var _auth: FirebaseAuth
     private lateinit var _signInClient: SignInClient
