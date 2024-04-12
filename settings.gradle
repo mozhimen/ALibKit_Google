@@ -18,7 +18,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AAbilityKit_Firebase"
+rootProject.name = "AAbilityKit_Google"
 include ':app'
 include ':firebase_auth'
 //SwiftKit
@@ -26,3 +26,5 @@ include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
+include ':android_ump'
+include ':android_gms_ads'

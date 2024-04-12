@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.abilityk.google.firebase.auth'
+    namespace 'com.mozhimen.abilityk.google.android.ump'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,15 +32,7 @@ android {
 dependencies {
 
     implementation project(':SwiftKit:basick')
-    // Import the BoM for the Firebase platform
-    api(platform("com.google.firebase:firebase-bom:32.3.1"))
-
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    api("com.google.firebase:firebase-auth-ktx")
-
-    // Also add the dependency for the Google Play services library and specify its version
-    api("com.google.android.gms:play-services-auth:20.7.0")
+    api "com.google.android.ump:user-messaging-platform:2.1.0"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
