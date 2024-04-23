@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.content.IntentSender
 import android.util.Log
+import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
@@ -48,7 +49,7 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
 
     fun isOneTapSignIn(boolean: Boolean) {
         _isOneTapSignIn = boolean
-        Log.d(TAG, "isOneTapSignIn: $boolean")
+        UtilKLogWrapper.d(TAG, "isOneTapSignIn: $boolean")
     }
 
     fun setOnUpdateUI(block: IA_Listener<FirebaseUser?>) {
@@ -65,7 +66,7 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
                 launchSignIn(pendingIntent)
             }
             .addOnFailureListener { e ->
-                Log.e(TAG, "Google Sign-in failed", e)
+                UtilKLogWrapper.e(TAG, "Google Sign-in failed", e)
             }
     }
 
@@ -89,19 +90,19 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
                             idToken != null -> {
                                 // Got an ID token from Google. Use it to authenticate
                                 // with Firebase.
-                                Log.d(TAG, "Got ID token.")
+                                UtilKLogWrapper.d(TAG, "Got ID token.")
 
                                 val firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
                                 auth.signInWithCredential(firebaseCredential)
                                     .addOnCompleteListener(_componentActivity) { task ->
                                         if (task.isSuccessful) {
                                             // Sign in success, update UI with the signed-in user's information
-                                            Log.d(TAG, "signInWithCredential:success")
+                                            UtilKLogWrapper.d(TAG, "signInWithCredential:success")
                                             val user = auth.currentUser
                                             updateUI(user)
                                         } else {
                                             // If sign in fails, display a message to the user.
-                                            Log.w(TAG, "signInWithCredential:failure", task.exception)
+                                            UtilKLogWrapper.w(TAG, "signInWithCredential:failure", task.exception)
                                             updateUI(null)
                                         }
                                     }
@@ -109,7 +110,7 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
 
                             else -> {
                                 // Shouldn't happen.
-                                Log.d(TAG, "No ID token!")
+                                UtilKLogWrapper.d(TAG, "No ID token!")
                             }
                         }
                     } catch (e: ApiException) {
@@ -160,12 +161,12 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
             .addOnCompleteListener(_componentActivity!!) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
+                    UtilKLogWrapper.d(TAG, "signInWithCredential:success")
                     val user: FirebaseUser? = _auth.currentUser
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    UtilKLogWrapper.w(TAG, "signInWithCredential:failure", task.exception)
 //                    val view = binding.mainLayout
 //                    Snackbar.make(view, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
                     updateUI(null)
@@ -182,15 +183,15 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
             val credential = _signInClient.getSignInCredentialFromIntent(data)
             val idToken = credential.googleIdToken
             if (idToken != null) {
-                Log.d(TAG, "firebaseAuthWithGoogle: ${credential.id}")
+                UtilKLogWrapper.d(TAG, "firebaseAuthWithGoogle: ${credential.id}")
                 firebaseAuthWithGoogle(idToken)
             } else {
                 // Shouldn't happen.
-                Log.d(TAG, "No ID token!")
+                UtilKLogWrapper.d(TAG, "No ID token!")
             }
         } catch (e: ApiException) {
             // Google Sign In failed, update UI appropriately
-            Log.w(TAG, "Google sign in failed", e)
+            UtilKLogWrapper.w(TAG, "Google sign in failed", e)
             updateUI(null)
         }
     }
@@ -228,7 +229,7 @@ class FirebaseAuthProxy(private var _componentActivity: ComponentActivity?, priv
                 .build()
             _signInLauncher?.launch(intentSenderRequest)
         } catch (e: IntentSender.SendIntentException) {
-            Log.e(TAG, "Couldn't start Sign In: ${e.localizedMessage}")
+            UtilKLogWrapper.e(TAG, "Couldn't start Sign In: ${e.localizedMessage}")
         }
     }
 }
