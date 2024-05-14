@@ -28,3 +28,4 @@ include ':SwiftKit:basick'
 
 include ':android_ump'
 include ':android_gms_ads'
+include ':guava'
