@@ -21,12 +21,15 @@ dependencyResolutionManagement {
 rootProject.name = "AAbilityKit_Google"
 include ':app'
 include ':firebase_auth'
+include ':android_ump'
+include ':android_gms_play_ads'
+include ':android_gms_play_location'
+include ':android_play_review'
+include ':guava'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
-include ':android_ump'
-include ':android_gms_ads'
-include ':guava'
-include ':android_play_review'
+
+include ':android_gms_play_ads_identifier'
