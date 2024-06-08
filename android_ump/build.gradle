@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.abilityk.google.android.ump'
+    namespace 'com.mozhimen.libk.google.android.ump'
     compileSdk 34
 
     defaultConfig {

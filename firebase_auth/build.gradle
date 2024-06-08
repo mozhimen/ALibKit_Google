@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.abilityk.google.firebase.auth'
+    namespace 'com.mozhimen.libk.google.firebase.auth'
     compileSdk 34
 
     defaultConfig {

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.abilityk.android.play.review'
+    namespace 'com.mozhimen.libk.android.play.review'
     compileSdk 34
 
     defaultConfig {
