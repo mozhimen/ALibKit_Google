@@ -50,6 +50,4 @@ object CMetaData {
   </application>
 </manifest>
     """
-
-
 }
