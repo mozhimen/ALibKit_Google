@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.firebase.auth'
+    namespace 'com.mozhimen.libk.google.firebase.basic'
     compileSdk 34
 
     defaultConfig {
@@ -32,12 +32,9 @@ android {
 
 dependencies {
     implementation project(':SwiftKit:basick')
-    api project(project.path.replace(project.name, '') + ':firebase_basic')
-    api project(project.path.replace(project.name, '') + ':android_gms_play_services_auth')
 
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    api("com.google.firebase:firebase-auth-ktx")
+    // Import the BoM for the Firebase platform
+    api(platform("com.google.firebase:firebase-bom:32.3.1"))
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

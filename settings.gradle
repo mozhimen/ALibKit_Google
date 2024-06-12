@@ -27,10 +27,14 @@ include ':android_gms_play_location'
 include ':android_play_review'
 include ':guava'
 include ':android_gms_play_ads_identifier'
+include ':gson'
+include ':firebase_analytics'
+include ':firebase_basic'
+include ':android_gms_play_services_auth'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
 
-include ':gson'
+

@@ -18,7 +18,7 @@ object CMetaData {
      * // 测试Banner广告id
      * BannerUnitId:"ca-app-pub-3940256099942544/6300978111"
      */
-    const val GMS_ADS_APPLICATION_ID = """
+    const val ANDROID_GMS_ADS_APPLICATION_ID = """
 <manifest>
   <application>
     <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
@@ -30,7 +30,7 @@ object CMetaData {
     """
 
     //The flag below optimizes the MobileAds.initialize() initialization call:
-    const val GMS_ADS_FLAG_OPTIMIZE_INITIALIZATION = """
+    const val ANDROID_GMS_ADS_FLAG_OPTIMIZE_INITIALIZATION = """
 <manifest>
   <application>
       <meta-data
@@ -41,7 +41,7 @@ object CMetaData {
     """
 
     //The flag below optimizes ad load calls for all ad formats:
-    const val gms_ads_flag_OPTIMIZE_AD_LOADING = """
+    const val ANDROID_GMS_ADS_FLAG_OPTIMIZE_AD_LOADING = """
 <manifest>
   <application>
       <meta-data
