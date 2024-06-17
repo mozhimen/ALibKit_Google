@@ -15,10 +15,10 @@ import com.mozhimen.libk.google.firebase.analytics.cons.CLogParam
  * @Version 1.0
  */
 class LogEventProvider(private val _firebaseAnalytics: FirebaseAnalytics?) {
-    fun screenView(screenName: String, screenClass: String, content: String) {
+    fun screenView(screenName: String, content: String) {
         logEvent(CLogEvent.SCREEN_VIEW) {
             param(CLogParam.SCREEN_NAME, screenName)
-            param(CLogParam.SCREEN_CLASS, screenClass)
+//            param(CLogParam.SCREEN_CLASS, screenClass)
             param(CLogParam.CONTENT, content)
         }
     }
@@ -32,6 +32,14 @@ class LogEventProvider(private val _firebaseAnalytics: FirebaseAnalytics?) {
     }
 
     ////////////////////////////////////////////////////////////////////
+
+    fun logEvent(name: String, map: Map<String, String>) {
+        logEvent(name) {
+            for ((t,u) in map.entries){
+                param(t,u)
+            }
+        }
+    }
 
     //自定义事件
     fun logEvent(name: String, block: IExt_Listener<ParametersBuilder>) {

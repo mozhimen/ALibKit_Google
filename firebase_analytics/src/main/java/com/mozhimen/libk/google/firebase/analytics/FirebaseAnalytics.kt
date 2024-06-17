@@ -1,7 +1,6 @@
 package com.mozhimen.libk.google.firebase.analytics
 
 import android.os.Bundle
-import androidx.lifecycle.LifecycleOwner
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
@@ -16,7 +15,7 @@ import com.mozhimen.libk.google.firebase.basic.optins.OApiInit_InApplication_Fir
  * @Version 1.0
  */
 @OApiInit_InApplication_FirebaseBasicMgr
-object FirebaseAnalyticsMgr {
+object FirebaseAnalytics {
     /**
      * The `FirebaseAnalytics` used to record screen views.
      */
@@ -31,6 +30,7 @@ object FirebaseAnalyticsMgr {
     // [END declare_analytics]
 
     private val _logEventProvider: LogEventProvider by lazy { LogEventProvider(_firebaseAnalytics) }
+    val logEventProvider get() = _logEventProvider
 
     //////////////////////////////////////////////////////////////////////
 
@@ -43,10 +43,6 @@ object FirebaseAnalyticsMgr {
     fun setUserProperty(name: String, value: String) {
         _firebaseAnalytics.setUserProperty(name, value)
     }
-
-    //自定义事件
-    fun logEventProvider(): LogEventProvider =
-        _logEventProvider
 
     //设置默认事件参数
     fun setDefaultEventParameters(parameters: Bundle) {

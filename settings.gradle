@@ -37,4 +37,5 @@ project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
 
-
+include ':firebase_crashlytics'
+include ':firebase_crashlytics_ndk'
