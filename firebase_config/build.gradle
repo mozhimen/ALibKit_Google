@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.firebase.crashlytics'
+    namespace 'com.mozhimen.libk.google.firebase.config'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -30,11 +31,12 @@ android {
 }
 
 dependencies {
+    implementation project(':SwiftKit:basick')
     api project(project.path.replace(project.name,'')+':firebase_basic')
-    api project(project.path.replace(project.name,'')+':firebase_analytics')
-    // Add the dependencies for the Crashlytics and Analytics libraries
+
+    // Add the dependencies for the Remote Config and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    api 'com.google.firebase:firebase-crashlytics-ktx'
+    api("com.google.firebase:firebase-config-ktx")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

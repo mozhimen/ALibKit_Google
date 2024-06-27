@@ -40,3 +40,4 @@ include ':SwiftKit:basick'
 
 include ':firebase_crashlytics'
 include ':firebase_crashlytics_ndk'
+include ':firebase_config'
