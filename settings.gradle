@@ -1,8 +1,6 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        mavenCentral()
-        google()
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/repository/public' }
@@ -14,6 +12,7 @@ dependencyResolutionManagement {
         maven { url 'https://developer.huawei.com/repo/' }
         maven { url "https://jitpack.io" }
         maven { url 'https://www.jitpack.io' }
+        mavenLocal()
         mavenCentral()
         google()
     }
@@ -32,12 +31,15 @@ include ':gson'
 include ':firebase_analytics'
 include ':firebase_basic'
 include ':android_gms_play_services_auth'
+include ':firebase_crashlytics'
+include ':firebase_crashlytics_ndk'
+include ':firebase_config'
+include ':dagger'
+include ':dagger_hilt'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
 
-include ':firebase_crashlytics'
-include ':firebase_crashlytics_ndk'
-include ':firebase_config'
+
