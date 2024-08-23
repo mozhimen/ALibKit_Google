@@ -30,11 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
     implementation project(':SwiftKit:basick')
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(':firebase_auth')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

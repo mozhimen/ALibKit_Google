@@ -2,10 +2,11 @@ package com.mozhimen.libk.google.test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mozhimen.basick.elemk.androidx.appcompat.bases.viewbinding.BaseActivityVB
+import com.mozhimen.libk.google.test.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivityVB<ActivityMainBinding>() {
+    override fun initView(savedInstanceState: Bundle?) {
+
     }
 }

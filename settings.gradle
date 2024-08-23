@@ -36,9 +36,9 @@ include ':firebase_crashlytics_ndk'
 include ':firebase_config'
 include ':dagger'
 include ':dagger_hilt'
+include ':firebase_config_test'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 
-include ':firebase_config_test'
