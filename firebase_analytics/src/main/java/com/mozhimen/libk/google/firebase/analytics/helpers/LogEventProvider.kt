@@ -3,7 +3,7 @@ package com.mozhimen.libk.google.firebase.analytics.helpers
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.ParametersBuilder
 import com.google.firebase.analytics.ktx.logEvent
-import com.mozhimen.basick.elemk.commons.IExt_Listener
+import com.mozhimen.kotlin.elemk.commons.IExt_Listener
 import com.mozhimen.libk.google.firebase.analytics.cons.CLogEvent
 import com.mozhimen.libk.google.firebase.analytics.cons.CLogParam
 

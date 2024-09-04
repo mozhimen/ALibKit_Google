@@ -1,6 +1,6 @@
 package com.mozhimen.libk.google.firebase.basic
 
-import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
+import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.libk.google.firebase.basic.optins.OAppRootPath_GoogleServicesJson
 import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_GmsGoogleServices
 
