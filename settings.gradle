@@ -47,3 +47,4 @@ project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
 include ':KUtilKit:utilk_android'
 include ':KUtilKit:utilk_kotlin'
 include ':material'
+include ':firebase_messaging'
