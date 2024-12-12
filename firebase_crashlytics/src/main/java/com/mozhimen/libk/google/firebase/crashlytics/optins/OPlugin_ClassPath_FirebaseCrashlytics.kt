@@ -1,4 +1,4 @@
-package com.mozhimen.libk.google.firebase.basic.optins
+package com.mozhimen.libk.google.firebase.crashlytics.optins
 
 /**
  * @ClassName OPlugin_ClassPath_GmsGoogleServices

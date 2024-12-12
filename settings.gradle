@@ -37,14 +37,16 @@ include ':firebase_config'
 include ':dagger'
 include ':dagger_hilt'
 include ':firebase_config_test'
+include ':material'
+include ':firebase_messaging'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
+include ':SwiftKit:bindk'
 //KUtilKit
 include ':KUtilKit'
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
 include ':KUtilKit:utilk_android'
 include ':KUtilKit:utilk_kotlin'
-include ':material'
-include ':firebase_messaging'
+

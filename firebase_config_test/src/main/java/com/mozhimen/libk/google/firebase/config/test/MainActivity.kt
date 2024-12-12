@@ -2,10 +2,8 @@ package com.mozhimen.libk.google.firebase.config.test
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.google.firebase.remoteconfig.ktx.get
-import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.mozhimen.bindk.bases.activity.viewbinding.BaseActivityVB
+import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.kotlin.utilk.android.widget.showToast
 import com.mozhimen.libk.google.firebase.basic.FirebaseBasicMgr

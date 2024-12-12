@@ -33,10 +33,14 @@ android {
     buildFeatures{
         viewBinding true
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
-    implementation project(':SwiftKit:basick')
+    implementation project(':SwiftKit:bindk')
     implementation project(':firebase_config')
 
     testImplementation 'junit:junit:4.13.2'
