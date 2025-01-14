@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.android.ump'
+    namespace 'com.mozhimen.libk.google.guava.listenablefuture'
     compileSdk 34
 
     defaultConfig {
@@ -22,22 +22,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
+        jvmTarget = '11'
     }
 }
 
 dependencies {
-    api "com.google.android.ump:user-messaging-platform:2.1.0"
+    api "com.google.guava:listenablefuture:1.0"
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

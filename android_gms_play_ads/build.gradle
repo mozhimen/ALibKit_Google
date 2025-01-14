@@ -18,7 +18,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
         }
     }
     compileOptions {
@@ -35,8 +35,8 @@ android {
 }
 
 dependencies {
+    implementation project(':KUtilKit:utilk_android')
     api 'com.google.android.gms:play-services-ads:23.0.0'
-    implementation project(':SwiftKit:basick')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

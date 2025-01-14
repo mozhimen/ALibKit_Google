@@ -1,6 +1,7 @@
 package com.mozhimen.libk.google.firebase.crashlytics
 
 import com.mozhimen.libk.google.firebase.basic.optins.OApiInit_InApplication_FirebaseBasicMgr
+import com.mozhimen.libk.google.firebase.crashlytics.optins.OBuildApp_NeedMappingFileConfig
 import com.mozhimen.libk.google.firebase.crashlytics.optins.OPlugin_ClassPath_FirebaseCrashlytics
 
 /**
@@ -13,6 +14,7 @@ import com.mozhimen.libk.google.firebase.crashlytics.optins.OPlugin_ClassPath_Fi
 object FirebaseCrashlyticsMgr {
     @JvmStatic
     @OPlugin_ClassPath_FirebaseCrashlytics
+    @OBuildApp_NeedMappingFileConfig
     @OApiInit_InApplication_FirebaseBasicMgr
     fun init() {
 

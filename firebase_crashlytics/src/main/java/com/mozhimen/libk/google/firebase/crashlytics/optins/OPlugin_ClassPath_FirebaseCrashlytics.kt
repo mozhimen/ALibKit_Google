@@ -22,14 +22,14 @@ package com.mozhimen.libk.google.firebase.crashlytics.optins
     在您的模块（应用级）Gradle 文件（通常是 <project>/<app-module>/build.gradle）中，添加 Crashlytics Gradle 插件：
 
     plugins {
-    id 'com.android.application'
-
-    // Make sure that you have the Google services Gradle plugin
-    id 'com.google.gms.google-services'
-
-    // Add the Crashlytics Gradle plugin
-    id 'com.google.firebase.crashlytics'
-    ...
-}
+        id 'com.android.application'
+    
+        // Make sure that you have the Google services Gradle plugin
+        id 'com.google.gms.google-services'
+    
+        // Add the Crashlytics Gradle plugin
+        id 'com.google.firebase.crashlytics'
+        ...
+    }
 """)
 annotation class OPlugin_ClassPath_FirebaseCrashlytics
