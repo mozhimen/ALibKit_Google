@@ -1,16 +1,14 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-//    id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.dagger'
+    namespace 'com.mozhimen.libk.google.text_recognition_chinese'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 //        consumerProguardFiles "consumer-rules.pro"
@@ -32,12 +30,9 @@ android {
 }
 
 dependencies {
-    api "com.google.dagger:dagger:2.19"
-
-//    kapt "com.google.dagger:dagger-android-processor:2.19"
-//    kapt "com.google.dagger:dagger-compiler:2.19"
+    api 'com.google.mlkit:text-recognition-chinese:16.0.0-beta6'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

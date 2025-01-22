@@ -20,35 +20,41 @@ dependencyResolutionManagement {
 
 rootProject.name = "ALibKit_Google"
 include ':app'
-include ':firebase_auth'
-include ':android_ump'
-include ':android_gms_play_ads'
-include ':android_gms_play_location'
-include ':android_play_review'
-include ':guava'
-include ':android_gms_play_ads_identifier'
-include ':gson'
-include ':firebase_analytics'
-include ':firebase_basic'
-include ':android_gms_play_services_auth'
-include ':firebase_crashlytics'
-include ':firebase_crashlytics_ndk'
-include ':firebase_config'
+include ':android_gms:play_services_ads'
+include ':android_gms:play_services_ads_identifier'
+include ':android_gms:play_services_auth'
+include ':android_gms:play_services_location'
+include ':android_play:review'
+include ':android_ump:user_messaging_platform'
 include ':dagger'
-include ':dagger_hilt'
-include ':firebase_config_test'
+include ':dagger:dagger_android'
+include ':dagger:dagger_android_support'
+include ':dagger:hilt_android'
+include ':firebase:firebase_analytics'
+include ':firebase:firebase_auth'
+include ':firebase:firebase_basic'
+include ':firebase:firebase_config'
+include ':firebase:firebase_config_test'
+include ':firebase:firebase_crashlytics'
+include ':firebase:firebase_crashlytics_ndk'
+include ':firebase:firebase_messaging'
+include ':gson'
+include ':guava'
+include ':guava:listenablefuture'
 include ':material'
-include ':firebase_messaging'
-include ':guava_listenablefuture'
+include ':mlkit:text_recognition_chinese'
+include ':zxing'
+//ALibKit_Jetpack
+include ':ALibKit_Jetpack'
+project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
+include ':ALibKit_Jetpack:core'
+include ':ALibKit_Jetpack:databinding'
+include ':ALibKit_Jetpack:annotation'
 //ALibKit_Jetbrains
 include ':ALibKit_Jetbrains'
 project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
 include ':ALibKit_Jetbrains:kotlin_stdlib'
 include ':ALibKit_Jetbrains:kotlinx_coroutines'
-//ALibKit_Jetpack
-include ':ALibKit_Jetpack'
-project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
-include ':ALibKit_Jetpack:databinding'
 //ASwiftKit
 include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
@@ -57,6 +63,7 @@ include ':ASwiftKit:bindk'
 //KUtilKit
 include ':KUtilKit'
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:utilk_android'
-include ':KUtilKit:utilk_kotlin'
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
+
 

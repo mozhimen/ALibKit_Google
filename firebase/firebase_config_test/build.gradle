@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.test'
+    namespace 'com.mozhimen.libk.google.firebase.config.test'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mozhimen.libk.google.test"
-        minSdk 24
-        targetSdk 33
+        applicationId "com.mozhimen.libk.google.firebase.config.test"
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -33,13 +33,17 @@ android {
     buildFeatures{
         viewBinding true
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
     implementation project(':ASwiftKit:bindk')
-    implementation project(':firebase:firebase_auth')
+    implementation project(':firebase:firebase_config')
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

@@ -1,11 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-//    id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.dagger'
+    namespace 'com.mozhimen.libk.google.zxing'
     compileSdk 34
 
     defaultConfig {
@@ -13,7 +12,7 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,12 +31,10 @@ android {
 }
 
 dependencies {
-    api "com.google.dagger:dagger:2.19"
-
-//    kapt "com.google.dagger:dagger-android-processor:2.19"
-//    kapt "com.google.dagger:dagger-compiler:2.19"
+    api 'com.google.zxing:android-core:3.3.0'
+    api 'com.google.zxing:core:3.3.3'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

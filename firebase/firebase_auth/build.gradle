@@ -1,11 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-//    id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.dagger'
+    namespace 'com.mozhimen.libk.google.firebase.auth'
     compileSdk 34
 
     defaultConfig {
@@ -32,10 +31,16 @@ android {
 }
 
 dependencies {
-    api "com.google.dagger:dagger:2.19"
+    api project(project.path.replace(project.name, '') + ':firebase_basic')
+    if (rootProject.name == "ALibKit_Google") {
+        api project(':android_gms:play_services_auth')
+    } else {
+        api project(':ALibKit_Google:android_gms:play_services_auth')
+    }
 
-//    kapt "com.google.dagger:dagger-android-processor:2.19"
-//    kapt "com.google.dagger:dagger-compiler:2.19"
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    api("com.google.firebase:firebase-auth-ktx")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
