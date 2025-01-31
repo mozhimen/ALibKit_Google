@@ -44,6 +44,11 @@ include ':guava:listenablefuture'
 include ':material'
 include ':mlkit:text_recognition_chinese'
 include ':zxing'
+include ':material:test'
+//ALibKit_Airbnb
+include ':ALibKit_Airbnb'
+project(':ALibKit_Airbnb').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Airbnb")
+include ':ALibKit_Airbnb:lottie'
 //ALibKit_Jetpack
 include ':ALibKit_Jetpack'
 project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
@@ -60,10 +65,19 @@ include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
 include ':ASwiftKit:basick'
 include ':ASwiftKit:bindk'
+include ':ASwiftKit:xmlk'
 //KUtilKit
 include ':KUtilKit'
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
 include ':KUtilKit:android'
 include ':KUtilKit:kotlin'
+//AAdaptKit
+include ':AAdaptKit'
+project(':AAdaptKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAdaptKit")
+include ':AAdaptKit:dynamic_colors'
+//AAnimKit
+include ':AAnimKit'
+project(':AAnimKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAnimKit")
+include ':AAnimKit:lottie'
 
 
