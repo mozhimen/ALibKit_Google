@@ -3,7 +3,7 @@ package com.mozhimen.libk.google.firebase.config.test
 import android.os.Bundle
 import android.util.Log
 import com.google.firebase.remoteconfig.ktx.get
-import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
+import com.mozhimen.uik.databinding.bases.viewbinding.activity.BaseActivityVB
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.kotlin.utilk.android.widget.showToast
 import com.mozhimen.libk.google.firebase.basic.FirebaseBasicMgr

@@ -1,7 +1,7 @@
 package com.mozhimen.libk.google.material.test.fragment
 
 import android.os.Bundle
-import com.mozhimen.bindk.bases.viewbinding.fragment.BaseFragmentVB
+import com.mozhimen.uik.databinding.bases.viewbinding.fragment.BaseFragmentVB
 import com.mozhimen.libk.google.material.test.adapter.StringAdapter
 import com.mozhimen.libk.google.material.test.databinding.FragmentFragment4Binding
 

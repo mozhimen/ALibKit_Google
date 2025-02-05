@@ -5,7 +5,7 @@ import androidx.annotation.CallSuper
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.mozhimen.kotlin.utilk.android.widget.showToast
-import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
+import com.mozhimen.uik.databinding.bases.viewbinding.activity.BaseActivityVB
 import com.mozhimen.kotlin.elemk.google.material.CSnackbar
 import com.mozhimen.kotlin.utilk.google.material.UtilKSnackbar
 
