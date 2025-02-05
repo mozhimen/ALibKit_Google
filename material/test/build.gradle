@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation project(':material')
-    implementation project(':ASwiftKit:bindk')
+    implementation project(':ASwiftKit:uik:databinding')
     implementation project(':ASwiftKit:xmlk')
     implementation project(':AAdaptKit:dynamic_colors')
     implementation project(':AAnimKit:lottie')

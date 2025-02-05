@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation project(':ASwiftKit:bindk')
+    implementation project(':ASwiftKit:uik:databinding')
     implementation project(':firebase:firebase_config')
 
     testImplementation 'junit:junit:4.13.2'
