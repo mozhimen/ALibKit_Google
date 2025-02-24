@@ -41,6 +41,7 @@ dependencies {
     implementation project(':ASwiftKit:xmlk')
     implementation project(':AAdaptKit:dynamic_colors')
     implementation project(':AAnimKit:lottie')
+    implementation project(':AXmlKit:lottie')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

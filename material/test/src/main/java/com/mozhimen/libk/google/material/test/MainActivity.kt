@@ -8,6 +8,7 @@ import com.mozhimen.kotlin.utilk.android.content.UtilKConfiguration
 import com.mozhimen.kotlin.utilk.android.content.startContext
 import com.mozhimen.kotlin.utilk.androidx.appcompat.UtilKAppCompatDelegate
 import com.mozhimen.libk.google.material.test.activity.BottomNavigationActivity
+import com.mozhimen.libk.google.material.test.activity.BottomSheetActivity
 import com.mozhimen.libk.google.material.test.activity.CardViewActivity
 import com.mozhimen.libk.google.material.test.activity.FloatingActionButtonActivity
 import com.mozhimen.libk.google.material.test.activity.SnackbarActivity
@@ -70,7 +71,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
 //                    8 -> startContext<SearchViewActivity>()
 //                    9 -> startContext<TabLayoutCustomViewActivity>()
 //                    10 -> startContext<DrawerLayoutActivity>()
-//                    11 -> startContext<BottomSheetActivity>()
+                    11 -> startContext<BottomSheetActivity>()
 //                    12 -> startContext<MaterialButtonActivity>()
 //                    13 -> startContext<ShapeableImageViewActivity>()
 //                    14 -> startContext<BadgeDrawableActivity>()
