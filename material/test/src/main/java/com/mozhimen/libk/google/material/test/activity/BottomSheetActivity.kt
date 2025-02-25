@@ -1,13 +1,16 @@
 package com.mozhimen.libk.google.material.test.activity
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import  com.mozhimen.libk.google.material.test.databinding.ActivityBottomSheetBinding
-import  com.mozhimen.libk.google.material.test.dialog.MyBottomSheetDialog
 import com.mozhimen.libk.google.material.test.R
+import com.mozhimen.libk.google.material.test.dialog.MyBottomSheetDialog
 import com.mozhimen.libk.google.material.test.dialog.MyFullDialog
+import com.mozhimen.xmlk.dialogk.bases.commons.IDialogKClickListener
+import com.mozhimen.xmlk.dialogk.bottomsheet.bases.BaseDialogKBottomSheet
 
 class BottomSheetActivity : ToolbarActivity<ActivityBottomSheetBinding>() {
 
@@ -29,8 +32,15 @@ class BottomSheetActivity : ToolbarActivity<ActivityBottomSheetBinding>() {
         }
 
         vb.btnBottomSheetDialog.setOnClickListener {
-            val bottomSheetDialog = BottomSheetDialog(this)
-            bottomSheetDialog.setContentView(R.layout.dialog_bottom_sheet)
+            val bottomSheetDialog =object :BaseDialogKBottomSheet<IDialogKClickListener>(this){
+                override fun onCreateView(inflater: LayoutInflater): View? {
+                    return inflater.inflate(R.layout.dialog_bottom_sheet, null)
+                }
+
+                override fun onViewCreated(view: View) {
+                }
+            }
+//            bottomSheetDialog.setContentView(R.layout.dialog_bottom_sheet)
             bottomSheetDialog.show()
         }
 

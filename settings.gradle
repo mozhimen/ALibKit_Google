@@ -79,5 +79,9 @@ include ':AAdaptKit:dynamic_colors'
 include ':AAnimKit'
 project(':AAnimKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAnimKit")
 include ':AAnimKit:lottie'
+//AAnimKit
+include ':AXmlKit'
+project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
+include ':AXmlKit:dialogk:bottomsheet'
 
 
