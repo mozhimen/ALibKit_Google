@@ -32,7 +32,7 @@ class BottomSheetActivity : ToolbarActivity<ActivityBottomSheetBinding>() {
         }
 
         vb.btnBottomSheetDialog.setOnClickListener {
-            val bottomSheetDialog =object :BaseDialogKBottomSheet<IDialogKClickListener>(this){
+            val bottomSheetDialog =object :BaseDialogKBottomSheet(this,/*,R.style.BottomSheetDialog*/com.mozhimen.xmlk.R.style.ThemeK_Design_Light_BottomSheetDialog_Transparent){
                 override fun onCreateView(inflater: LayoutInflater): View? {
                     return inflater.inflate(R.layout.dialog_bottom_sheet, null)
                 }

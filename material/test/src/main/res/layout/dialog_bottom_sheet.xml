@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:background="@drawable/bg_rect_radius10_top_whit"
     android:paddingTop="80dp"
     android:paddingBottom="80dp"
     android:text="BottomSheetDialog"
