@@ -85,3 +85,4 @@ project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:dialogk:bottomsheet'
 
 
+include ':protobuf'

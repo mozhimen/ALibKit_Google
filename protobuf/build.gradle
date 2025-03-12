@@ -1,0 +1,57 @@
+plugins {
+    id 'java-library'
+    id 'com.google.protobuf'
+}
+
+/**
+ * buildscript {
+ *  repositories {
+ *      google()
+ *      jcenter()
+ *  }
+ *
+ *  dependencies {
+ *      classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.15"
+ *  }
+ * }
+ *
+ */
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.8.0"
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    api 'com.google.protobuf:protobuf-javalite:4.26.1'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'build/generated/source/proto/main/java'
+        }
+        proto {
+            srcDir 'src/main/proto'
+        }
+    }
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+tasks.withType(ProcessResources) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
