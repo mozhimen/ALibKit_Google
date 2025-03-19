@@ -32,8 +32,19 @@ protobuf {
     }
 }
 
+/**
+ * dependencyResolutionManagement {
+ *  // repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+ *  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+ *  repositories {
+ *      google()
+ *      mavenCentral()
+ *  }
+ * }
+ */
 dependencies {
     api 'com.google.protobuf:protobuf-javalite:4.26.1'
+    //classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.15"
 }
 
 sourceSets {
