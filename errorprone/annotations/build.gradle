@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.android.gms.play.auth'
+    namespace 'com.mozhimen.libk.google.errorprone.annotations'
     compileSdk 34
 
     defaultConfig {
@@ -31,10 +31,9 @@ android {
 }
 
 dependencies {
-    // Also add the dependency for the Google Play services library and specify its version
-    api("com.google.android.gms:play-services-auth:20.7.0")
+    api 'com.google.errorprone:error_prone_annotations:2.16'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
