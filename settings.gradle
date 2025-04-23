@@ -59,6 +59,7 @@ project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:dialogk:bottomsheet'
 //
 include ':app'
+include ':accompanist:drawablepainter'
 include ':android_gms:play_services_ads'
 include ':android_gms:play_services_ads_identifier'
 include ':android_gms:play_services_auth'
@@ -90,3 +91,4 @@ include ':flexbox'
 include ':exoplayer'
 include ':errorprone:annotations'
 include ':android_ads:mediation_test_suite'
+include ':drawablepainter'
