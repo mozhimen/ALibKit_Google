@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.libk.google.text_recognition_chinese'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19
