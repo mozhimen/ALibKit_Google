@@ -35,11 +35,15 @@ android {
 }
 
 dependencies {
-    implementation project(':firebase:firebase_crashlytics')
+    if (rootProject.name == "ALibKit_Google") {
+        api project(':firebase:firebase_crashlytics')
+    } else {
+        api project(':ALibKit_Google:firebase:firebase_crashlytics')
+    }
 
     // Add the dependencies for the Crashlytics NDK and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-crashlytics-ndk'
+    api 'com.google.firebase:firebase-crashlytics-ndk'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
