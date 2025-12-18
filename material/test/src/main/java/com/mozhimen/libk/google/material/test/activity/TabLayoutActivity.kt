@@ -141,7 +141,7 @@ class TabLayoutActivity : ToolbarActivity<ActivityTabLayoutBinding>() {
 
         // 红点
         vb.tabLayout5.getTabAt(1)?.let { tab ->
-            tab.orCreateBadge.backgroundColor = ContextCompat.getColor(this, com.mozhimen.xmlk.R.color.cok_oran_ff511a)
+            tab.orCreateBadge.backgroundColor = ContextCompat.getColor(this, com.mozhimen.uik.R.color.cok_oran_ff511a)
         }
     }
 

@@ -56,7 +56,7 @@ class CompanyDialog(private val companyMap: Map<String, Int>, private val select
             holder.textView.text = keys[position]
             holder.textView.textSize = 16f
             if (position == selectedTabPosition) {
-                holder.textView.setTextColor(ContextCompat.getColor(context, com.mozhimen.xmlk.R.color.cok_red__d32f2f))
+                holder.textView.setTextColor(ContextCompat.getColor(context, com.mozhimen.uik.R.color.cok_red__d32f2f))
             } else {
                 holder.textView.setTextColor(ContextCompat.getColor(context, R.color.black))
             }
