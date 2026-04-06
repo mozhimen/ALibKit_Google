@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.firebase.auth'
+    namespace 'com.mozhimen.libk.google.firebase.analytics'
     compileSdk 35
 
     defaultConfig {
@@ -12,13 +12,13 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
         }
     }
     compileOptions {
@@ -31,16 +31,11 @@ android {
 }
 
 dependencies {
-    api project(project.path.replace(project.name, '') + ':firebase_basic')
-    if (rootProject.name == "ALibKit_Google") {
-        api project(':android_gms:play_services_auth')
-    } else {
-        api project(':ALibKit_Google:android_gms:play_services_auth')
-    }
+    api project(project.path.replace(project.name, '') + ':firebase-firebase_basic')
 
-    // Add the dependency for the Firebase Authentication library
+    // Add the dependency for the Analytics library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    api("com.google.firebase:firebase-auth-ktx")
+    api("com.google.firebase:firebase-analytics-ktx")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
