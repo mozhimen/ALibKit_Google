@@ -1,6 +1,6 @@
 package com.mozhimen.libk.google.firebase.basic
 
-import com.mozhimen.kotlin.lintk.optins.api.OApiInit_InApplication
+import com.mozhimen.libk.google.firebase.basic.optins.OApiInit_InApplication_FirebaseBasicMgr
 import com.mozhimen.libk.google.firebase.basic.optins.OAppRootPath_GoogleServicesJson
 import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_GmsGoogleServices
 
@@ -14,7 +14,7 @@ import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_GmsGoogl
 object FirebaseBasicMgr {
     @OAppRootPath_GoogleServicesJson
     @OPlugin_ClassPath_GmsGoogleServices
-    @OApiInit_InApplication
+    @OApiInit_InApplication_FirebaseBasicMgr
     @JvmStatic
     fun init() {
     }

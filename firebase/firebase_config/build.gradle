@@ -31,7 +31,6 @@ android {
 }
 
 dependencies {
-    implementation project(':KUtilKit:android')
     api project(project.path.replace(project.name,'')+':firebase_basic')
 
     // Add the dependencies for the Remote Config and Analytics libraries

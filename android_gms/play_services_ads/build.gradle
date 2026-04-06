@@ -35,7 +35,6 @@ android {
 }
 
 dependencies {
-    implementation project(':KUtilKit:android')
     api 'com.google.android.gms:play-services-ads:23.0.0'
 
     testImplementation 'junit:junit:4.13.2'

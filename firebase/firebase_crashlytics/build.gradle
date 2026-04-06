@@ -35,7 +35,6 @@ android {
 }
 
 dependencies {
-    implementation project(':KUtilKit:android')
     api project(project.path.replace(project.name,'')+':firebase_basic')
     api project(project.path.replace(project.name,'')+':firebase_analytics')
     // Add the dependencies for the Crashlytics and Analytics libraries
