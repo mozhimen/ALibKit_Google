@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.firebase.analytics'
+    namespace 'com.mozhimen.libk.google.firebase.crashlytics.ndk'
     compileSdk 35
 
     defaultConfig {
@@ -12,13 +12,13 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+//        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -28,14 +28,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
-    api project(project.path.replace(project.name, '') + ':firebase-firebase_basic')
+    if (rootProject.name == "ALibKit_Google") {
+        api project(':firebase-crashlytics-bom')
+    } else {
+        api project(':ALibKit_Google:firebase-crashlytics-bom')
+    }
 
-    // Add the dependency for the Analytics library
+    // Add the dependencies for the Crashlytics NDK and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    api("com.google.firebase:firebase-analytics-ktx")
+    api 'com.google.firebase:firebase-crashlytics-ndk'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

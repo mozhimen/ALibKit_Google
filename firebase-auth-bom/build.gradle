@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.libk.google.text_recognition_chinese'
+    namespace 'com.mozhimen.libk.google.firebase.auth'
     compileSdk 35
 
     defaultConfig {
         minSdk 19
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 //        consumerProguardFiles "consumer-rules.pro"
@@ -30,9 +31,18 @@ android {
 }
 
 dependencies {
-    api 'com.google.mlkit:text-recognition-chinese:16.0.0-beta6'
+    api project(project.path.replace(project.name, '') + ':firebase-bom_3231')
+    if (rootProject.name == "ALibKit_Google") {
+        api project(':android_gms-play_services_auth')
+    } else {
+        api project(':ALibKit_Google:android_gms-play_services_auth')
+    }
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    api("com.google.firebase:firebase-auth-ktx")
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
