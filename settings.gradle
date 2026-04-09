@@ -3,6 +3,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
+        maven { url 'https://www.jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/repository/public' }
@@ -13,16 +15,10 @@ dependencyResolutionManagement {
         maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
         maven { url 'https://developer.huawei.com/repo/' }
         maven { url "https://jitpack.io" }
-        maven { url 'https://www.jitpack.io' }
-        mavenLocal()
     }
 }
 
 rootProject.name = "ALibKit_Google"
-//AAnimKit
-include ':AXmlKit'
-project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
-include ':AXmlKit:dialogk:bottomsheet'
 //
 include ':app'
 include ':accompanist-drawablepainter'
