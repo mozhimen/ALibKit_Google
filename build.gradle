@@ -26,7 +26,7 @@ buildscript {
 
 subprojects {
     apply plugin: 'maven-publish'
-    def versionToPublished = '0.0.7'
+    def versionToPublished = '0.0.8'
     def groupIdToPublished = 'com.github.mozhimen.ALibKit_Google'
 
     afterEvaluate { project ->
